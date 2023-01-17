@@ -1,0 +1,17 @@
+{% extends "dashboard.html" %}
+
+{% block title %}{% endblock %}
+
+{% block main %}
+
+
+<style>
+	body{
+		background-image:url({{url_for('static', filename='img/bgwp.png')}})
+	}
+</style>
+
+<h1 style="color:white">CLIENT-1 OUTPUT</h1></br>
+<pre style="color:white">{{ cl1_logs }}</pre>
+
+{% endblock %}

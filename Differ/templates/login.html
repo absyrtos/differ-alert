@@ -1,0 +1,48 @@
+{% extends "base.html" %}
+
+{% block title %}Log In{% endblock %}
+{% block head %}
+  {{ super() }}
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <style>
+        body{
+        background-image:url({{url_for('static', filename='img/bgwp.png')}})
+
+        }
+    </style>
+{% endblock %}
+{% block main %}
+	<body>
+        
+	</br></br></br></br></br>
+                <div align="center">
+                <div align="center" class="border">
+                        <div class="header">
+                                <h1 class="word">Login</h1>
+                        </div></br></br></br>
+                        <div class="txt">
+                                <p>username</p>
+                        </div>
+        
+                        
+                        <h2 class="word">
+                                <form action="{{ url_for('login') }}" method="post">
+                                
+                                        <input id="username" name="username" type="text" placeholder="Enter your username" class="textbox"/></br></br>
+                                        <div class="txt2">
+                                                <p>password</p>
+                                        </div>
+                                        <input id="password" name="password" type="password" placeholder="Enter your password" class="textbox"/></br></br>
+                                        <div class="msg">{{ msg }}</div></br></br>
+                                        <input type="submit" class="btn" value="Sign In"></br></br>
+                                </form>
+                        </h2>
+                        
+                        <p class="bottom">Don't have an account? <a class="bottom" href="{{url_for('register')}}"> Sign Up here</a></p>
+                </div>
+                </div>
+
+	
+
+{% endblock %}
+        </body>

@@ -1,0 +1,49 @@
+{% extends "base.html" %}
+
+{% block title %}Sign Up{% endblock %}
+{% block head %}
+  {{ super() }}
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <style>
+        body{
+        background-image:url({{url_for('static', filename='img/bgwp.png')}})
+
+        }
+    </style>
+{% endblock %}
+
+
+{% block main %}
+
+	</br></br></br></br></br>
+                <div align="center">
+                <div align="center" class="border">
+                        <div class="header">
+                                <h1 class="word">Register</h1>
+                        </div></br></br>
+
+                        <div class="txt">
+                                <p>username</p>
+                        </div>
+                        <h2 class="word">
+                                <form action="{{ url_for('register') }}" method="post">
+                                        <input id="username" name="username" type="text" placeholder="Enter your username" class="textbox"/></br></br>
+                                        <div class="txt2">
+                                                <p>password</p>
+                                        </div>
+                                        <input id="password" name="password" type="password" placeholder="Enter your password" class="textbox"/></br></br>
+                                        <div class="txt2">
+                                                <p>e-mail</p>
+                                        </div>
+                                        <input id="email" name="email" type="text" placeholder="Enter your email address" class="textbox"/></br></br>
+                                        <div class="msg">{{ msg }}</div></br>
+                                        <input type="submit" class="btn" value="Sign Up"></br></br>
+                                </form>
+                        </h2>
+                        <p class="bottom">Already have an account? <a class="bottom" href="{{url_for('login')}}"> Sign In here</a></p>
+                </div>
+                </div>
+       
+
+
+{% endblock %}
