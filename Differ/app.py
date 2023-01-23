@@ -43,9 +43,9 @@ def main(argv):
     now = datetime.now()
     dt_string = now.strftime("%d-%m-%Y_%H:%M:%S")
     
-    first_file = os.popen('ls -t /home/absy/Desktop/Differ/scans/c1_scans/*.xml | head -1').read()
-    os.system('nmap -iL /home/absy/Desktop/Differ/ips/c1_ip.txt -oX /home/absy/Desktop/Differ/scans/c1_scans/scan_'+dt_string+'.xml > /dev/null 2>&1')
-    out = os.popen('pyndiff -f2 /home/absy/Desktop/Differ/scans/c1_scans/scan_'+dt_string+'.xml -f1 '+first_file+'').read()
+    first_file = os.popen('ls -t /opt/Differ/scans/c1_scans/*.xml | head -1').read()
+    os.system('nmap -iL /opt/Differ/ips/c1_ip.txt -oX /opt/Differ/scans/c1_scans/scan_'+dt_string+'.xml > /dev/null 2>&1')
+    out = os.popen('pyndiff -f2 /opt/Differ/scans/c1_scans/scan_'+dt_string+'.xml -f1 '+first_file+'').read()
     os.system('rm '+first_file+'')
     with open("logs/cl1_logs.txt","a") as f:
         f.write(out)
@@ -55,9 +55,9 @@ def main(argv):
     with open("logs/cl1_alert.txt","w") as f:
         f.write(out)
 
-    first_file = os.popen('ls -t /home/absy/Desktop/Differ/scans/c2_scans/*.xml | head -1').read()
-    os.system('nmap -iL /home/absy/Desktop/Differ/ips/c2_ip.txt -oX /home/absy/Desktop/Differ/scans/c2_scans/scan_'+dt_string+'.xml > /dev/null 2>&1')
-    out = os.popen('pyndiff -f2 /home/absy/Desktop/Differ/scans/c2_scans/scan_'+dt_string+'.xml -f1 '+first_file+'').read()
+    first_file = os.popen('ls -t /opt/Differ/scans/c2_scans/*.xml | head -1').read()
+    os.system('nmap -iL /opt/Differ/ips/c2_ip.txt -oX /opt/Differ/scans/c2_scans/scan_'+dt_string+'.xml > /dev/null 2>&1')
+    out = os.popen('pyndiff -f2 /opt/Differ/scans/c2_scans/scan_'+dt_string+'.xml -f1 '+first_file+'').read()
     os.system('rm '+first_file+'')
     with open("logs/cl2_logs.txt","a") as f:
         f.write(out)
@@ -67,9 +67,9 @@ def main(argv):
     with open("logs/cl2_alert.txt","w") as f:
         f.write(out)
 
-    first_file = os.popen('ls -t /home/absy/Desktop/Differ/scans/c3_scans/*.xml | head -1').read()
-    os.system('nmap -iL /home/absy/Desktop/Differ/ips/c3_ip.txt -oX /home/absy/Desktop/Differ/scans/c3_scans/scan_'+dt_string+'.xml > /dev/null 2>&1')
-    out = os.popen('pyndiff -f2 /home/absy/Desktop/Differ/scans/c3_scans/scan_'+dt_string+'.xml -f1 '+first_file+'').read()
+    first_file = os.popen('ls -t /opt/Differ/scans/c3_scans/*.xml | head -1').read()
+    os.system('nmap -iL /opt/Differ/ips/c3_ip.txt -oX /opt/Differ/scans/c3_scans/scan_'+dt_string+'.xml > /dev/null 2>&1')
+    out = os.popen('pyndiff -f2 /opt/Differ/scans/c3_scans/scan_'+dt_string+'.xml -f1 '+first_file+'').read()
     os.system('rm '+first_file+'')
     with open("logs/cl3_logs.txt","a") as f:
         f.write(out)
