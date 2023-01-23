@@ -10,8 +10,8 @@ app.secret_key = 'your secret key'
 
 app.config['MYSQL_HOST'] = 'localhost'
 app.config['MYSQL_USER'] = 'root'
-app.config['MYSQL_PASSWORD'] = 'asdasd123'
-app.config['MYSQL_DB'] = 'geeklogin'
+app.config['MYSQL_PASSWORD'] = ''
+app.config['MYSQL_DB'] = 'differlogin'
 
 mysql = MySQL(app)
 
